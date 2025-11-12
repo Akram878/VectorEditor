@@ -16,18 +16,18 @@
                 <StackPanel Orientation="Vertical" Margin="4">
 
                     <!-- الأدوات -->
-                    <TextBlock Foreground="White" FontWeight="Bold" Text="الأدوات" Margin="0,0,0,8"/>
+                    <TextBlock Foreground="White" FontWeight="Bold" Text="Tools" Margin="0,0,0,8"/>
                     <UniformGrid Columns="2" Rows="3" Margin="0,0,0,12">
-                        <Button Name="BtnSelect"  Content="تحديد"   Margin="4" Click="BtnSelect_Click"/>
-                        <Button Name="BtnRect"    Content="مستطيل"  Margin="4" Click="BtnRect_Click"/>
-                        <Button Name="BtnEllipse" Content="إهليلج"  Margin="4" Click="BtnEllipse_Click"/>
-                        <Button Name="BtnLine"    Content="خط"      Margin="4" Click="BtnLine_Click"/>
-                        <Button Name="BtnPolygon" Content="مضلع (مخمّس)" Margin="4" Click="BtnPolygon_Click"/>
-                        <Button Name="BtnDelete"  Content="🗑 حذف"  Margin="4" Click="BtnDelete_Click"/>
+                        <Button Name="BtnSelect"  Content="Select"   Margin="4" Click="BtnSelect_Click"/>
+                        <Button Name="BtnRect"    Content="rectangular"  Margin="4" Click="BtnRect_Click"/>
+                        <Button Name="BtnEllipse" Content="circle"  Margin="4" Click="BtnEllipse_Click"/>
+                        <Button Name="BtnLine"    Content="line"      Margin="4" Click="BtnLine_Click"/>
+                        <Button Name="BtnPolygon" Content="polygon (pentagon)" Margin="4" Click="BtnPolygon_Click"/>
+                        <Button Name="BtnDelete"  Content="Delete"  Margin="4" Click="BtnDelete_Click"/>
                     </UniformGrid>
 
                     <!-- الخصائص -->
-                    <TextBlock Foreground="White" FontWeight="Bold" Text="خصائص الشكل" Margin="0,0,0,8"/>
+                    <TextBlock Foreground="White" FontWeight="Bold" Text="Properties" Margin="0,0,0,8"/>
 
                     <Grid Margin="0,0,0,12">
                         <Grid.RowDefinitions>
@@ -76,10 +76,10 @@
                         <Button Content="↶" Width="30" Margin="2" Click="BtnUndo_Click"/>
                     </StackPanel>
 
-                    <TextBlock Foreground="White" FontWeight="Bold" Text="حفظ / تحميل" Margin="0,0,0,8"/>
-                    <Button Name="BtnSave" Content="💾 حفظ المشروع (JSON)" Margin="4" Click="BtnSave_Click"/>
-                    <Button Name="BtnLoad" Content="📂 تحميل المشروع" Margin="4" Click="BtnLoad_Click"/>
-                    <Button Name="BtnSaveSvg" Content="🖼 حفظ كـ SVG" Margin="4" Click="BtnSaveSvg_Click"/>
+                    <TextBlock Foreground="White" FontWeight="Bold" Text="save/load" Margin="0,0,0,8"/>
+                    <Button Name="BtnSave" Content="save (JSON)" Margin="4" Click="BtnSave_Click"/>
+                    <Button Name="BtnLoad" Content="laod" Margin="4" Click="BtnLoad_Click"/>
+                    <Button Name="BtnSaveSvg" Content="save (SVG)" Margin="4" Click="BtnSaveSvg_Click"/>
 
                 </StackPanel>
             </ScrollViewer>

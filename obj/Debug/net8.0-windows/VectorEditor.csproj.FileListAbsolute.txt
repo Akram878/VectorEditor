@@ -17,3 +17,4 @@ D:\programming\VectorEditor\obj\Debug\net8.0-windows\refint\VectorEditor.dll
 D:\programming\VectorEditor\obj\Debug\net8.0-windows\VectorEditor.pdb
 D:\programming\VectorEditor\obj\Debug\net8.0-windows\VectorEditor.genruntimeconfig.cache
 D:\programming\VectorEditor\obj\Debug\net8.0-windows\ref\VectorEditor.dll
+D:\programming\VectorEditor\obj\Debug\net8.0-windows\VectorEditor.sourcelink.json

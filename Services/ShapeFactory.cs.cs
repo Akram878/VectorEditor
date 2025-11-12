@@ -1,4 +1,4 @@
-﻿using System.Windows.Media;
+using System.Windows.Media;
 using VectorEditor.Models;
 
 namespace VectorEditor.Services
@@ -8,9 +8,12 @@ namespace VectorEditor.Services
         Rectangle,
         Ellipse,
         Line,
-        Polygon
+        Polygon  // Polygon (Pentagon in our project)
     }
-
+    /// <summary>
+    /// Factory responsible for creating shape objects based on the requested ShapeType.
+    /// This prevents duplicated "new" calls across the project and keeps creation logic centralized.
+    /// </summary>
     public static class ShapeFactory
     {
         public static IShape CreateShape(ShapeType type)
