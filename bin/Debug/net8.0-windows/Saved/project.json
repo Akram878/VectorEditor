@@ -1,0 +1,21 @@
+[
+  {
+    "Type": "Line",
+    "X1": 298,
+    "Y1": 373,
+    "X2": 319,
+    "Y2": 502,
+    "Stroke": "#FF000000",
+    "StrokeThickness": 2
+  },
+  {
+    "Type": "Ellipse",
+    "Left": 352,
+    "Top": 187,
+    "Width": 245,
+    "Height": 269,
+    "Fill": "#FFADD8E6",
+    "Stroke": "#FF000000",
+    "StrokeThickness": 2
+  }
+]

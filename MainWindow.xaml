@@ -1,0 +1,97 @@
+﻿<Window x:Class="VectorEditor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Vector Editor" Width="1100" Height="700"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="260"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- الشريط الجانبي -->
+        <Border Grid.Column="0" Background="#0F172A" Padding="12">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <StackPanel Orientation="Vertical" Margin="4">
+
+                    <!-- الأدوات -->
+                    <TextBlock Foreground="White" FontWeight="Bold" Text="الأدوات" Margin="0,0,0,8"/>
+                    <UniformGrid Columns="2" Rows="3" Margin="0,0,0,12">
+                        <Button Name="BtnSelect"  Content="تحديد"   Margin="4" Click="BtnSelect_Click"/>
+                        <Button Name="BtnRect"    Content="مستطيل"  Margin="4" Click="BtnRect_Click"/>
+                        <Button Name="BtnEllipse" Content="إهليلج"  Margin="4" Click="BtnEllipse_Click"/>
+                        <Button Name="BtnLine"    Content="خط"      Margin="4" Click="BtnLine_Click"/>
+                        <Button Name="BtnPolygon" Content="مضلع (مخمّس)" Margin="4" Click="BtnPolygon_Click"/>
+                        <Button Name="BtnDelete"  Content="🗑 حذف"  Margin="4" Click="BtnDelete_Click"/>
+                    </UniformGrid>
+
+                    <!-- الخصائص -->
+                    <TextBlock Foreground="White" FontWeight="Bold" Text="خصائص الشكل" Margin="0,0,0,8"/>
+
+                    <Grid Margin="0,0,0,12">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="70"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Row="0" Grid.Column="0" Foreground="White" Text="X:" Margin="4" VerticalAlignment="Center"/>
+                        <TextBox Grid.Row="0" Grid.Column="1" Name="XBox" Margin="4"
+                     GotFocus="PropBox_GotFocus" LostFocus="PropBox_LostFocus" PreviewKeyDown="PropBox_PreviewKeyDown"/>
+
+                        <TextBlock Grid.Row="1" Grid.Column="0" Foreground="White" Text="Y:" Margin="4" VerticalAlignment="Center"/>
+                        <TextBox Grid.Row="1" Grid.Column="1" Name="YBox" Margin="4"
+                     GotFocus="PropBox_GotFocus" LostFocus="PropBox_LostFocus" PreviewKeyDown="PropBox_PreviewKeyDown"/>
+
+                        <TextBlock Grid.Row="2" Grid.Column="0" Foreground="White" Text="Width:" Margin="4" VerticalAlignment="Center"/>
+                        <TextBox Grid.Row="2" Grid.Column="1" Name="WidthBox" Margin="4"
+                     GotFocus="PropBox_GotFocus" LostFocus="PropBox_LostFocus" PreviewKeyDown="PropBox_PreviewKeyDown"/>
+
+                        <TextBlock Grid.Row="3" Grid.Column="0" Foreground="White" Text="Height:" Margin="4" VerticalAlignment="Center"/>
+                        <TextBox Grid.Row="3" Grid.Column="1" Name="HeightBox" Margin="4"
+                     GotFocus="PropBox_GotFocus" LostFocus="PropBox_LostFocus" PreviewKeyDown="PropBox_PreviewKeyDown"/>
+
+                        <TextBlock Grid.Row="4" Grid.Column="0" Foreground="White" Text="Fill:" Margin="4" VerticalAlignment="Center"/>
+                        <TextBox Grid.Row="4" Grid.Column="1" Name="FillColorBox" Margin="4"
+                     GotFocus="PropBox_GotFocus" LostFocus="PropBox_LostFocus" PreviewKeyDown="PropBox_PreviewKeyDown"/>
+
+                        <TextBlock Grid.Row="5" Grid.Column="0" Foreground="White" Text="Stroke:" Margin="4" VerticalAlignment="Center"/>
+                        <TextBox Grid.Row="5" Grid.Column="1" Name="StrokeColorBox" Margin="4"
+                     GotFocus="PropBox_GotFocus" LostFocus="PropBox_LostFocus" PreviewKeyDown="PropBox_PreviewKeyDown"/>
+                    </Grid>
+
+                    <!-- التكبير / التراجع / الحفظ -->
+                    <TextBlock Foreground="White" FontWeight="Bold" Text="تحكم" Margin="0,0,0,8"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                        <Button Content="+" Width="30" Margin="2" Click="BtnZoomIn_Click"/>
+                        <Button Content="-" Width="30" Margin="2" Click="BtnZoomOut_Click"/>
+                        <Button Content="↶" Width="30" Margin="2" Click="BtnUndo_Click"/>
+                    </StackPanel>
+
+                    <TextBlock Foreground="White" FontWeight="Bold" Text="حفظ / تحميل" Margin="0,0,0,8"/>
+                    <Button Name="BtnSave" Content="💾 حفظ المشروع (JSON)" Margin="4" Click="BtnSave_Click"/>
+                    <Button Name="BtnLoad" Content="📂 تحميل المشروع" Margin="4" Click="BtnLoad_Click"/>
+                    <Button Name="BtnSaveSvg" Content="🖼 حفظ كـ SVG" Margin="4" Click="BtnSaveSvg_Click"/>
+
+                </StackPanel>
+            </ScrollViewer>
+        </Border>
+
+        <!-- اللوحة -->
+        <Border Grid.Column="1" Background="#111827" Padding="8" ClipToBounds="True">
+            <Canvas Name="MainCanvas" Background="White" ClipToBounds="True"
+              MouseLeftButtonDown="Canvas_MouseLeftButtonDown"
+              MouseMove="Canvas_MouseMove"
+              MouseLeftButtonUp="Canvas_MouseLeftButtonUp"/>
+        </Border>
+
+    </Grid>
+</Window>
