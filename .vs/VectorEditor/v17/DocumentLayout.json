@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\programming\\VectorEditor\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{039B9215-A887-41FE-A441-C41EE598221B}|VectorEditor.csproj|d:\\programming\\vectoreditor\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{039B9215-A887-41FE-A441-C41EE598221B}|VectorEditor.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{039B9215-A887-41FE-A441-C41EE598221B}|VectorEditor.csproj|d:\\programming\\vectoreditor\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{039B9215-A887-41FE-A441-C41EE598221B}|VectorEditor.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
@@ -21,10 +25,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{039B9215-A887-41FE-A441-C41EE598221B}|VectorEditor.csproj|d:\\programming\\vectoreditor\\models\\ishape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{039B9215-A887-41FE-A441-C41EE598221B}|VectorEditor.csproj|solutionrelative:models\\ishape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{039B9215-A887-41FE-A441-C41EE598221B}|VectorEditor.csproj|d:\\programming\\vectoreditor\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{039B9215-A887-41FE-A441-C41EE598221B}|VectorEditor.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{039B9215-A887-41FE-A441-C41EE598221B}|VectorEditor.csproj|d:\\programming\\vectoreditor\\models\\ellipseshape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -70,7 +70,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -78,7 +78,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "D:\\programming\\VectorEditor\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
@@ -90,7 +90,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "RectangleShape.cs",
               "DocumentMoniker": "D:\\programming\\VectorEditor\\Models\\RectangleShape.cs",
               "RelativeDocumentMoniker": "Models\\RectangleShape.cs",
@@ -98,12 +98,11 @@
               "RelativeToolTip": "Models\\RectangleShape.cs",
               "ViewState": "AgIAABsAAAAAAAAAAAAqwCUAAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T10:45:48.767Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-12T10:45:48.767Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "LineShape.cs",
               "DocumentMoniker": "D:\\programming\\VectorEditor\\Models\\LineShape.cs",
               "RelativeDocumentMoniker": "Models\\LineShape.cs",
@@ -111,12 +110,11 @@
               "RelativeToolTip": "Models\\LineShape.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAUwBUAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T10:57:58.294Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-12T10:57:58.294Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "ShapeBase.cs",
               "DocumentMoniker": "D:\\programming\\VectorEditor\\Models\\ShapeBase.cs",
               "RelativeDocumentMoniker": "Models\\ShapeBase.cs",
@@ -124,25 +122,24 @@
               "RelativeToolTip": "Models\\ShapeBase.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T10:44:12.801Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-12T10:44:12.801Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "D:\\programming\\VectorEditor\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
-              "ToolTip": "D:\\programming\\VectorEditor\\MainWindow.xaml.cs",
-              "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "ToolTip": "D:\\programming\\VectorEditor\\MainWindow.xaml.cs*",
+              "RelativeToolTip": "MainWindow.xaml.cs*",
+              "ViewState": "AgIAAHQEAAAAAAAAAAAgwIkEAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-12T10:35:35.863Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "IShape.cs",
               "DocumentMoniker": "D:\\programming\\VectorEditor\\Models\\IShape.cs",
               "RelativeDocumentMoniker": "Models\\IShape.cs",
@@ -150,8 +147,7 @@
               "RelativeToolTip": "Models\\IShape.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAiwBQAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T10:41:06.576Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-12T10:41:06.576Z"
             },
             {
               "$type": "Document",
@@ -163,8 +159,7 @@
               "RelativeToolTip": "Models\\EllipseShape.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAAqwCwAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T10:51:42.329Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-12T10:51:42.329Z"
             },
             {
               "$type": "Document",
@@ -176,8 +171,7 @@
               "RelativeToolTip": "Models\\PolygonShape.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T11:54:10.616Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-12T11:54:10.616Z"
             },
             {
               "$type": "Document",
@@ -189,8 +183,7 @@
               "RelativeToolTip": "Services\\UndoService.cs.cs",
               "ViewState": "AgIAAE8AAAAAAAAAAAAUwGUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T11:06:33.781Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-12T11:06:33.781Z"
             },
             {
               "$type": "Document",
@@ -202,8 +195,7 @@
               "RelativeToolTip": "Services\\SvgService.cs",
               "ViewState": "AgIAAHgAAAAAAAAAAAAUwJMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T13:50:48.976Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-12T13:50:48.976Z"
             },
             {
               "$type": "Document",
@@ -215,8 +207,7 @@
               "RelativeToolTip": "Services\\SerializationService.cs",
               "ViewState": "AgIAAIYAAAAAAAAAAAAwwPwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T11:07:21.707Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-12T11:07:21.707Z"
             },
             {
               "$type": "Document",
@@ -228,8 +219,7 @@
               "RelativeToolTip": "Services\\ShapeFactory.cs.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T11:04:34.87Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-12T11:04:34.87Z"
             },
             {
               "$type": "Document",

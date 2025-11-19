@@ -1,78 +1,22 @@
 [
   {
-    "Type": "Ellipse",
-    "Left": 29,
-    "Top": 69,
-    "Width": 139,
-    "Height": 164,
-    "Fill": "#00FFFFFF",
-    "Stroke": "#FF000000",
-    "StrokeThickness": 2
-  },
-  {
-    "Type": "Polygon",
-    "Points": [
-      {
-        "X": 75.5,
-        "Y": 231
-      },
-      {
-        "X": 98.81867355918499,
-        "Y": 257.41030990093185
-      },
-      {
-        "X": 89.91173283213993,
-        "Y": 300.1430889740576
-      },
-      {
-        "X": 61.08826716786024,
-        "Y": 300.1430889740576
-      },
-      {
-        "X": 52.18132644081501,
-        "Y": 257.41030990093185
-      }
-    ],
-    "Fill": "#00FFFFFF",
-    "Stroke": "#FF000000",
-    "StrokeThickness": 2
-  },
-  {
     "Type": "Rectangle",
-    "Left": 438,
-    "Top": 112,
-    "Width": 285,
-    "Height": 247,
-    "Fill": "#00FFFFFF",
-    "Stroke": "#FF000000",
-    "StrokeThickness": 2
-  },
-  {
-    "Type": "Line",
-    "X1": 299,
-    "Y1": 411,
-    "X2": 566,
-    "Y2": 521,
-    "Stroke": "#FF000000",
-    "StrokeThickness": 2
-  },
-  {
-    "Type": "Line",
-    "X1": 382,
-    "Y1": 344,
-    "X2": 333,
-    "Y2": 494,
+    "Left": 194,
+    "Top": 106.5,
+    "Width": 332,
+    "Height": 194,
+    "Fill": "#FFADD8E6",
     "Stroke": "#FF000000",
     "StrokeThickness": 2
   },
   {
     "Type": "Ellipse",
-    "Left": 718,
-    "Top": 354,
-    "Width": 10,
-    "Height": 10,
-    "Fill": "#FFFFFFFF",
+    "Left": 69,
+    "Top": 46.5,
+    "Width": 73,
+    "Height": 267,
+    "Fill": "#FFADD8E6",
     "Stroke": "#FF000000",
-    "StrokeThickness": 1
+    "StrokeThickness": 2
   }
 ]
