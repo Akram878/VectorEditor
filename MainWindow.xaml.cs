@@ -6,6 +6,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Shapes;
+using Microsoft.Win32;
 using VectorEditor.Models;
 using VectorEditor.Services;
 
@@ -173,6 +174,23 @@ namespace VectorEditor
 
         #region Constructor
 
+        // OLD:
+        // public MainWindow()
+        // {
+        //     InitializeComponent();
+        //
+        //     // Initialize zoom transform on the container that hosts the canvas.
+        //     ZoomContainer.LayoutTransform = new ScaleTransform(_canvasScale, _canvasScale);
+        //     UpdateZoomBox();
+        //
+        //     // Record the initial (empty) canvas state as an undo baseline.
+        //     SaveState(force: true);
+        //
+        //     // Ensure the canvas has a minimum size even if no shapes are present.
+        //     UpdateCanvasExtent();
+        // }
+        //
+        // NEW:
         public MainWindow()
         {
             InitializeComponent();
@@ -186,43 +204,152 @@ namespace VectorEditor
 
             // Ensure the canvas has a minimum size even if no shapes are present.
             UpdateCanvasExtent();
+
+            // Highlight initial active tool (Rectangle by default, Select is off).
+            UpdateToolButtonsVisuals();
+        }
+
+
+        /// <summary>
+        /// Updates visual highlight for tool buttons:
+        /// - Active drawing tool button (Rect/Ellipse/Line/Polygon) is highlighted.
+        /// - Select button is highlighted while selection mode is ON.
+        /// </summary>
+        private void UpdateToolButtonsVisuals()
+        {
+            // If buttons are not yet initialized (early in constructor), do nothing.
+            if (BtnRect == null || BtnEllipse == null || BtnLine == null || BtnPolygon == null || BtnSelect == null)
+                return;
+
+            // Clear all backgrounds to default.
+            BtnRect.ClearValue(Button.BackgroundProperty);
+            BtnEllipse.ClearValue(Button.BackgroundProperty);
+            BtnLine.ClearValue(Button.BackgroundProperty);
+            BtnPolygon.ClearValue(Button.BackgroundProperty);
+            BtnSelect.ClearValue(Button.BackgroundProperty);
+
+            // Highlight current drawing tool.
+            var activeBrush = Brushes.LightGreen;
+
+            switch (_currentTool)
+            {
+                case ShapeType.Rectangle:
+                    BtnRect.Background = activeBrush;
+                    break;
+                case ShapeType.Ellipse:
+                    BtnEllipse.Background = activeBrush;
+                    break;
+                case ShapeType.Line:
+                    BtnLine.Background = activeBrush;
+                    break;
+                case ShapeType.Polygon:
+                    BtnPolygon.Background = activeBrush;
+                    break;
+            }
+
+            // Highlight Select button if selection mode is active.
+            if (_selectMode)
+            {
+                BtnSelect.Background = Brushes.LightCoral;
+            }
         }
 
         #endregion
 
         #region Tool selection handlers
 
+        // OLD:
+        // private void BtnSelect_Click(object sender, RoutedEventArgs e)
+        // {
+        //     CancelPolygonDrawing();
+        //     _selectMode = true;
+        //     Deselect();
+        // }
+        //
+        // NEW:
         private void BtnSelect_Click(object sender, RoutedEventArgs e)
         {
             CancelPolygonDrawing();
-            _selectMode = true;
-            Deselect();
+            // Toggle selection mode on/off.
+            _selectMode = !_selectMode;
+
+            if (_selectMode)
+            {
+                // When entering select mode, clear drawing-related state.
+                Deselect();
+            }
+
+            UpdateToolButtonsVisuals();
         }
 
+        // OLD:
+        // private void BtnRect_Click(object sender, RoutedEventArgs e)
+        // {
+        //     CancelPolygonDrawing();
+        //     _selectMode = false;
+        //     _currentTool = ShapeType.Rectangle;
+        //     Deselect();
+        // }
+        //
+        // NEW:
         private void BtnRect_Click(object sender, RoutedEventArgs e)
         {
             CancelPolygonDrawing();
             _selectMode = false;
             _currentTool = ShapeType.Rectangle;
             Deselect();
+            UpdateToolButtonsVisuals();
         }
 
+        // OLD:
+        // private void BtnEllipse_Click(object sender, RoutedEventArgs e)
+        // {
+        //     CancelPolygonDrawing();
+        //     _selectMode = false;
+        //     _currentTool = ShapeType.Ellipse;
+        //     Deselect();
+        // }
+        //
+        // NEW:
         private void BtnEllipse_Click(object sender, RoutedEventArgs e)
         {
             CancelPolygonDrawing();
             _selectMode = false;
             _currentTool = ShapeType.Ellipse;
             Deselect();
+            UpdateToolButtonsVisuals();
         }
 
+        // OLD:
+        // private void BtnLine_Click(object sender, RoutedEventArgs e)
+        // {
+        //     CancelPolygonDrawing();
+        //     _selectMode = false;
+        //     _currentTool = ShapeType.Line;
+        //     Deselect();
+        // }
+        //
+        // NEW:
         private void BtnLine_Click(object sender, RoutedEventArgs e)
         {
             CancelPolygonDrawing();
             _selectMode = false;
             _currentTool = ShapeType.Line;
             Deselect();
+            UpdateToolButtonsVisuals();
         }
 
+        // OLD:
+        // private void BtnPolygon_Click(object sender, RoutedEventArgs e)
+        // {
+        //     // Enter free polygon drawing mode.
+        //     CancelPolygonDrawing();
+        //     _selectMode = false;
+        //     _currentTool = ShapeType.Polygon;
+        //     Deselect();
+        // }
+        //
+        // NEW:
         private void BtnPolygon_Click(object sender, RoutedEventArgs e)
         {
             // Enter free polygon drawing mode.
@@ -230,6 +357,7 @@ namespace VectorEditor
             _selectMode = false;
             _currentTool = ShapeType.Polygon;
             Deselect();
+            UpdateToolButtonsVisuals();
         }
 
         #endregion
@@ -238,7 +366,12 @@ namespace VectorEditor
 
         private void Canvas_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            _startPoint = e.GetPosition(MainCanvas);
+            // OLD
+            // _startPoint = e.GetPosition(MainCanvas);
+
+            // NEW
+            var rawPos = e.GetPosition(MainCanvas);
+            _startPoint = ClampToCanvas(rawPos);
 
             // 1) Free polygon mode: handle clicks as vertices
             if (!_selectMode && _currentTool == ShapeType.Polygon)
@@ -248,7 +381,19 @@ namespace VectorEditor
             }
 
             // 2) Clicked on an existing shape: select and possibly start dragging
-            if (e.OriginalSource is Shape s && MainCanvas.Children.Contains(s))
+            //    OLD: selection even when Select mode is OFF
+            // if (e.OriginalSource is Shape s && MainCanvas.Children.Contains(s))
+            // {
+            //     Select(s);
+            //     _isDragging = true;
+            //     _hasDraggedOrResizedOrDrawn = false; // prevent simple selection from being treated as an edit
+            //     _lastMousePos = _startPoint;
+            //     Mouse.Capture(MainCanvas);
+            //     return;
+            // }
+            // NEW: allow selecting/dragging only when Select button is active,
+            //      so we can draw inside shapes when Select is OFF.
+            if (_selectMode && e.OriginalSource is Shape s && MainCanvas.Children.Contains(s))
             {
                 Select(s);
                 _isDragging = true;
@@ -307,7 +452,12 @@ namespace VectorEditor
 
         private void Canvas_MouseMove(object sender, MouseEventArgs e)
         {
-            var pos = e.GetPosition(MainCanvas);
+            // OLD
+            // var pos = e.GetPosition(MainCanvas);
+
+            // NEW
+            var raw = e.GetPosition(MainCanvas);
+            var pos = ClampToCanvas(raw);
 
             // Polygon in-progress: update preview "rubber-band" line from last vertex to mouse.
             if (_isDrawingPolygon && _polygonPreviewLine != null && !_isDragging && !_isResizing)
@@ -607,9 +757,39 @@ namespace VectorEditor
         /// <summary>
         /// Translates a shape by the given delta.
         /// Supports Line, Polygon and basic shapes (Rectangle/Ellipse).
+        /// Prevents shapes from leaving the canvas bounds.
         /// </summary>
         private void MoveShape(Shape shape, double dx, double dy)
         {
+            // أولاً نحسب حدود الشكل ونضبط dx, dy بحيث لا يخرج من MainCanvas
+            Rect b = GetBounds(shape);
+            if (!b.IsEmpty)
+            {
+                double canvasW = MainCanvas.Width;
+                double canvasH = MainCanvas.Height;
+
+                double newLeft = b.X + dx;
+                double newTop = b.Y + dy;
+                double newRight = b.Right + dx;
+                double newBottom = b.Bottom + dy;
+
+                // لو سيتجاوز اليسار
+                if (newLeft < 0)
+                    dx -= newLeft;
+
+                // لو سيتجاوز الأعلى
+                if (newTop < 0)
+                    dy -= newTop;
+
+                // لو سيتجاوز اليمين
+                if (newRight > canvasW)
+                    dx -= (newRight - canvasW);
+
+                // لو سيتجاوز الأسفل
+                if (newBottom > canvasH)
+                    dy -= (newBottom - canvasH);
+            }
+
             if (shape is Line ln)
             {
                 ln.X1 += dx; ln.Y1 += dy;
@@ -635,26 +815,59 @@ namespace VectorEditor
         /// <summary>
         /// Resizes a shape based on mouse delta.
         /// For polygons, performs a scaling around the shape's bounding box.
+        /// Now also clamps the new size so the shape never leaves the canvas bounds.
         /// </summary>
         private void ResizeShapeBy(Shape shape, double dx, double dy)
         {
+            // مستطيل + إهليلج
             if (shape is Rectangle or Ellipse)
             {
-                shape.Width = Math.Max(5, shape.Width + dx);
-                shape.Height = Math.Max(5, shape.Height + dy);
+                // الحدود الحالية للشكل
+                Rect b = GetBounds(shape);
+
+                // العرض/الارتفاع الجديدين حسب حركة الماوس
+                double newW = Math.Max(5, shape.Width + dx);
+                double newH = Math.Max(5, shape.Height + dy);
+
+                // الحد الأقصى المسموح به حتى لا يخرج الشكل عن الـ Canvas
+                double maxW = MainCanvas.Width - b.X;
+                double maxH = MainCanvas.Height - b.Y;
+
+                newW = Math.Min(newW, maxW);
+                newH = Math.Min(newH, maxH);
+
+                shape.Width = newW;
+                shape.Height = newH;
             }
+            // الخط
             else if (shape is Line ln)
             {
-                ln.X2 += dx;
-                ln.Y2 += dy;
+                double newX2 = ln.X2 + dx;
+                double newY2 = ln.Y2 + dy;
+
+                // نمنع النقطة الثانية من الخروج خارج حدود الـ Canvas
+                newX2 = Math.Max(0, Math.Min(MainCanvas.Width, newX2));
+                newY2 = Math.Max(0, Math.Min(MainCanvas.Height, newY2));
+
+                ln.X2 = newX2;
+                ln.Y2 = newY2;
             }
+            // المضلع الحر
             else if (shape is Polygon pg)
             {
                 var b = GetBounds(pg);
-                if (b.Width < 1 || b.Height < 1) return;
+                if (b.Width < 1 || b.Height < 1)
+                    return;
 
                 double newW = Math.Max(5, b.Width + dx);
                 double newH = Math.Max(5, b.Height + dy);
+
+                double maxW = MainCanvas.Width - b.X;
+                double maxH = MainCanvas.Height - b.Y;
+
+                newW = Math.Min(newW, maxW);
+                newH = Math.Min(newH, maxH);
+
                 ScalePolygonTo(pg, b, newW, newH);
             }
         }
@@ -849,9 +1062,17 @@ namespace VectorEditor
         /// <summary>
         /// Applies a new size to the given shape using bounding box information.
         /// For polygons, scales all vertices to fit the requested width/height.
+        /// Now clamps the requested size so the shape stays inside the canvas.
         /// </summary>
         private void ApplySizeToShape(Shape s, Rect currentBounds, double targetW, double targetH)
         {
+            // We don't want to cross the line.
+            double maxW = MainCanvas.Width - currentBounds.X;
+            double maxH = MainCanvas.Height - currentBounds.Y;
+
+            targetW = Math.Min(targetW, maxW);
+            targetH = Math.Min(targetH, maxH);
+
             if (s is Rectangle or Ellipse)
             {
                 double left = Canvas.GetLeft(s);
@@ -861,13 +1082,30 @@ namespace VectorEditor
 
                 s.Width = targetW;
                 s.Height = targetH;
+
                 Canvas.SetLeft(s, left);
                 Canvas.SetTop(s, top);
             }
             else if (s is Line ln)
             {
-                ln.X2 = ln.X1 + targetW * Math.Sign((ln.X2 - ln.X1) == 0 ? 1 : (ln.X2 - ln.X1));
-                ln.Y2 = ln.Y1 + targetH * Math.Sign((ln.Y2 - ln.Y1) == 0 ? 1 : (ln.Y2 - ln.Y1));
+                // We maintain the direction of the line but limit it within the boundaries of the Canvas
+                double dirX = ln.X2 - ln.X1;
+                double dirY = ln.Y2 - ln.Y1;
+
+                if (dirX == 0 && dirY == 0)
+                    dirX = 1; // virtual direction
+
+                double signX = Math.Sign(dirX == 0 ? 1 : dirX);
+                double signY = Math.Sign(dirY == 0 ? 1 : dirY);
+
+                double newX2 = ln.X1 + targetW * signX;
+                double newY2 = ln.Y1 + targetH * signY;
+
+                newX2 = Math.Max(0, Math.Min(MainCanvas.Width, newX2));
+                newY2 = Math.Max(0, Math.Min(MainCanvas.Height, newY2));
+
+                ln.X2 = newX2;
+                ln.Y2 = newY2;
             }
             else if (s is Polygon pg)
             {
@@ -1042,6 +1280,20 @@ namespace VectorEditor
             }
         }
 
+        // OLD:
+        // private void BtnSave_Click(object sender, RoutedEventArgs e)
+        // {
+        //     // Ensure no selection visuals or polygon previews are persisted.
+        //     Deselect();
+        //     CancelPolygonDrawing();
+        //     RemoveResizeHandlesIfAny();
+        //
+        //     string json = SerializationService.Serialize(MainCanvas);
+        //     SerializationService.SaveToFile("project.json", json);
+        //     MessageBox.Show("Project has been saved to VectorEditor\\bin\\Saved (JSON).");
+        // }
+        //
+        // NEW:
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
             // Ensure no selection visuals or polygon previews are persisted.
@@ -1050,30 +1302,125 @@ namespace VectorEditor
             RemoveResizeHandlesIfAny();
 
             string json = SerializationService.Serialize(MainCanvas);
-            SerializationService.SaveToFile("project.json", json);
-            MessageBox.Show("Project has been saved to VectorEditor\\bin\\Saved (JSON).");
+
+            // Allow saving under different file names/locations (multiple JSON versions).
+            var dlg = new SaveFileDialog
+            {
+                Title = "Save project as JSON",
+                Filter = "JSON files (*.json)|*.json|All files (*.*)|*.*",
+                DefaultExt = ".json",
+                FileName = "project.json"
+            };
+
+            try
+            {
+                // Use the default Saved directory as initial folder if possible.
+                string defaultDir = SerializationService.GetSavedDirectory();
+                if (!string.IsNullOrWhiteSpace(defaultDir))
+                {
+                    dlg.InitialDirectory = defaultDir;
+                }
+            }
+            catch
+            {
+                // If anything fails here, we simply fall back to OS defaults.
+            }
+
+            if (dlg.ShowDialog() == true)
+            {
+                SerializationService.SaveToAbsolutePath(dlg.FileName, json);
+                MessageBox.Show($"Project has been saved to:\n{dlg.FileName}");
+            }
         }
 
+        // OLD:
+        // private void BtnLoad_Click(object sender, RoutedEventArgs e)
+        // {
+        //     CancelPolygonDrawing();
+        //     Deselect();
+        //
+        //     try
+        //     {
+        //         string json = SerializationService.LoadFromFile("project.json");
+        //         SerializationService.Deserialize(MainCanvas, json);
+        //         Deselect();
+        //         _undo.ResetWith(json);
+        //         UpdateCanvasExtent();
+        //         MessageBox.Show("Project loaded successfully.");
+        //     }
+        //     catch (Exception ex)
+        //     {
+        //         MessageBox.Show("Error while loading project: " + ex.Message);
+        //     }
+        // }
+        //
+        // NEW:
         private void BtnLoad_Click(object sender, RoutedEventArgs e)
         {
             CancelPolygonDrawing();
             Deselect();
 
+            // Allow choosing which JSON project file to load.
+            var dlg = new OpenFileDialog
+            {
+                Title = "Load project from JSON",
+                Filter = "JSON files (*.json)|*.json|All files (*.*)|*.*",
+                DefaultExt = ".json",
+                FileName = "project.json"
+            };
+
             try
             {
-                string json = SerializationService.LoadFromFile("project.json");
-                SerializationService.Deserialize(MainCanvas, json);
-                Deselect();
-                _undo.ResetWith(json);
-                UpdateCanvasExtent();
-                MessageBox.Show("Project loaded successfully.");
+                string defaultDir = SerializationService.GetSavedDirectory();
+                if (!string.IsNullOrWhiteSpace(defaultDir))
+                {
+                    dlg.InitialDirectory = defaultDir;
+                }
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show("Error while loading project: " + ex.Message);
+                // Ignore directory resolution errors and allow dialog to use defaults.
+            }
+
+            if (dlg.ShowDialog() == true)
+            {
+                try
+                {
+                    string json = SerializationService.LoadFromAbsolutePath(dlg.FileName);
+                    SerializationService.Deserialize(MainCanvas, json);
+                    Deselect();
+                    _undo.ResetWith(json);
+                    UpdateCanvasExtent();
+                    MessageBox.Show("Project loaded successfully.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error while loading project: " + ex.Message);
+                }
             }
         }
 
+        // OLD:
+        // private void BtnSaveSvg_Click(object sender, RoutedEventArgs e)
+        // {
+        //     try
+        //     {
+        //         // Remove selection visuals before exporting to SVG.
+        //         Deselect();
+        //         CancelPolygonDrawing();
+        //         RemoveResizeHandlesIfAny();
+        //
+        //         string svg = SvgService.SerializeToSvg(MainCanvas);
+        //         SerializationService.SaveToFile("project.svg", svg);
+        //         MessageBox.Show("SVG file has been saved to VectorEditor\\bin\\Saved.");
+        //     }
+        //     catch (Exception ex)
+        //     {
+        //         MessageBox.Show("Error while saving SVG: " + ex.Message);
+        //     }
+        // }
+        //
+        // NEW:
         private void BtnSaveSvg_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -1084,8 +1431,34 @@ namespace VectorEditor
                 RemoveResizeHandlesIfAny();
 
                 string svg = SvgService.SerializeToSvg(MainCanvas);
-                SerializationService.SaveToFile("project.svg", svg);
-                MessageBox.Show("SVG file has been saved to VectorEditor\\bin\\Saved.");
+
+                // Allow saving under different file names/locations (multiple SVG versions).
+                var dlg = new SaveFileDialog
+                {
+                    Title = "Save project as SVG",
+                    Filter = "SVG files (*.svg)|*.svg|All files (*.*)|*.*",
+                    DefaultExt = ".svg",
+                    FileName = "project.svg"
+                };
+
+                try
+                {
+                    string defaultDir = SerializationService.GetSavedDirectory();
+                    if (!string.IsNullOrWhiteSpace(defaultDir))
+                    {
+                        dlg.InitialDirectory = defaultDir;
+                    }
+                }
+                catch
+                {
+                    // Ignore directory resolution errors.
+                }
+
+                if (dlg.ShowDialog() == true)
+                {
+                    SerializationService.SaveToAbsolutePath(dlg.FileName, svg);
+                    MessageBox.Show($"SVG file has been saved to:\n{dlg.FileName}");
+                }
             }
             catch (Exception ex)
             {
@@ -1118,44 +1491,78 @@ namespace VectorEditor
         }
 
         /// <summary>
-        /// Adjusts the canvas size to tightly fit all shapes with an additional margin.
-        /// Ensures a minimum size when there are no shapes.
+        /// conset white space
         /// </summary>
         private void UpdateCanvasExtent()
         {
-            if (MainCanvas == null) return;
-
-            double minX = 0, minY = 0, maxX = 0, maxY = 0;
-            bool any = false;
-
-            foreach (var child in MainCanvas.Children.OfType<Shape>())
-            {
-                Rect b = GetBounds(child);
-                if (b.IsEmpty) continue;
-
-                if (!any)
-                {
-                    minX = b.X; minY = b.Y;
-                    maxX = b.Right; maxY = b.Bottom;
-                    any = true;
-                }
-                else
-                {
-                    minX = Math.Min(minX, b.X);
-                    minY = Math.Min(minY, b.Y);
-                    maxX = Math.Max(maxX, b.Right);
-                    maxY = Math.Max(maxY, b.Bottom);
-                }
-            }
-
-            const double margin = 50;
-            double width = any ? (maxX - minX + margin) : 800;
-            double height = any ? (maxY - minY + margin) : 600;
-
-            MainCanvas.Width = Math.Max(width, 800);
-            MainCanvas.Height = Math.Max(height, 600);
+            // conset size
+            MainCanvas.Width = 800;
+            MainCanvas.Height = 600;
         }
 
         #endregion
+
+        // فتح منيو ألوان الـ Fill
+        private void FillColorMenuButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button btn && btn.ContextMenu != null)
+            {
+                btn.ContextMenu.PlacementTarget = btn;
+                btn.ContextMenu.IsOpen = true;
+            }
+        }
+
+        // فتح منيو ألوان الـ Stroke
+        private void StrokeColorMenuButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button btn && btn.ContextMenu != null)
+            {
+                btn.ContextMenu.PlacementTarget = btn;
+                btn.ContextMenu.IsOpen = true;
+            }
+        }
+
+        // اختيار لون للـ Fill
+        private void FillColorMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is MenuItem mi && mi.Tag is string colorString)
+            {
+                _internalSet = true;
+                FillColorBox.Text = colorString;
+                _internalSet = false;
+
+                // نطبّق اللون على الشكل وعلى swatch
+                CommitProp(FillColorBox);
+            }
+        }
+
+        // اختيار لون للـ Stroke
+        private void StrokeColorMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+           if (sender is MenuItem mi && mi.Tag is string colorString)
+    {
+        _internalSet = true;
+        StrokeColorBox.Text = colorString;
+        _internalSet = false;
+
+        CommitProp(StrokeColorBox);
     }
+        }
+
+
+        /// <summary>
+        /// يقصّ إحداثيات النقطة بحيث تبقى داخل حدود MainCanvas
+        /// </summary>
+        private Point ClampToCanvas(Point p)
+        {
+            double x = Math.Max(0, Math.Min(MainCanvas.Width, p.X));
+            double y = Math.Max(0, Math.Min(MainCanvas.Height, p.Y));
+            return new Point(x, y);
+        }
+
+
+
+    }
+
+
 }

@@ -248,5 +248,47 @@ namespace VectorEditor.Services
                 ? File.ReadAllText(path)
                 : throw new FileNotFoundException(path);
         }
+
+        /// <summary>
+        /// Returns the default directory used for saving project files (JSON/SVG).
+        /// This allows the UI layer to configure file dialogs to open in the same folder.
+        /// </summary>
+        public static string GetSavedDirectory()
+        {
+            return ResolveSavedDir();
+        }
+
+        /// <summary>
+        /// Saves text content to an explicitly specified absolute path.
+        /// Used together with SaveFileDialog when user chooses a custom file name/location.
+        /// </summary>
+        public static void SaveToAbsolutePath(string fullPath, string content)
+        {
+            if (string.IsNullOrWhiteSpace(fullPath))
+                throw new ArgumentException("Path must not be empty.", nameof(fullPath));
+
+            string dir = SystemPath.GetDirectoryName(fullPath);
+            if (!string.IsNullOrEmpty(dir) && !Directory.Exists(dir))
+            {
+                Directory.CreateDirectory(dir);
+            }
+
+            File.WriteAllText(fullPath, content);
+        }
+
+        /// <summary>
+        /// Loads text content from an explicitly specified absolute path.
+        /// Used together with OpenFileDialog when user selects an arbitrary file.
+        /// </summary>
+        public static string LoadFromAbsolutePath(string fullPath)
+        {
+            if (string.IsNullOrWhiteSpace(fullPath))
+                throw new ArgumentException("Path must not be empty.", nameof(fullPath));
+
+            if (!File.Exists(fullPath))
+                throw new FileNotFoundException(fullPath);
+
+            return File.ReadAllText(fullPath);
+        }
     }
 }

@@ -34,7 +34,7 @@
                                 Margin="2"
                                 Click="BtnSelect_Click"/>
                         <Button x:Name="BtnRect"
-                                Content="rectangular"
+                                Content="rectangul"
                                 Width="70"
                                 Margin="2"
                                 Click="BtnRect_Click"/>
@@ -153,40 +153,253 @@
 
                     <!-- الألوان -->
                     <TextBlock Text="Colors"
-                               Foreground="White"
-                               FontSize="16"
-                               FontWeight="Bold"
-                               Margin="0,0,0,6"/>
+           Foreground="White"
+           FontSize="16"
+           FontWeight="Bold"
+           Margin="0,0,0,6"/>
 
                     <!-- Fill -->
                     <StackPanel Orientation="Horizontal" Margin="0,0,0,4">
                         <TextBlock Text="Fill:"
-                                   Width="70"
-                                   Foreground="White"
-                                   VerticalAlignment="Center"/>
+               Width="70"
+               Foreground="White"
+               VerticalAlignment="Center"/>
+
+                        <!-- خانة الهيكس بعرض ثابت -->
                         <TextBox x:Name="FillColorBox"
-                                 Margin="4,0"
-                                 Text="#FFADD8E6"
-                                 PreviewKeyDown="PropBox_PreviewKeyDown"
-                                 GotFocus="PropBox_GotFocus"
-                                 LostFocus="PropBox_LostFocus"/>
+             Width="120"
+             Margin="4,0"
+             Text="#FFADD8E6"
+             PreviewKeyDown="PropBox_PreviewKeyDown"
+             GotFocus="PropBox_GotFocus"
+             LostFocus="PropBox_LostFocus"/>
+
+                        <!-- زر منيو الألوان للـ Fill -->
+                        <Button Width="24"
+            Height="22"
+            Margin="4,0,0,0"
+            Content="▼"
+            Click="FillColorMenuButton_Click">
+                            <Button.ContextMenu>
+                                <ContextMenu>
+
+                                    <!-- 15 لون، كل واحد له Tag هو الهيكس -->
+                                    <MenuItem Header="Black" Tag="#FF000000" Click="FillColorMenuItem_Click">
+                                        <MenuItem.Icon>
+                                            <Rectangle Width="14" Height="14" Fill="Black"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+
+                                    <MenuItem Header="White" Tag="#FFFFFFFF" Click="FillColorMenuItem_Click">
+                                        <MenuItem.Icon>
+                                            <Rectangle Width="14" Height="14" Fill="White"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+
+                                    <MenuItem Header="Red" Tag="#FFFF0000" Click="FillColorMenuItem_Click">
+                                        <MenuItem.Icon>
+                                            <Rectangle Width="14" Height="14" Fill="Red"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+
+                                    <MenuItem Header="Green" Tag="#FF008000" Click="FillColorMenuItem_Click">
+                                        <MenuItem.Icon>
+                                            <Rectangle Width="14" Height="14" Fill="Green"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+
+                                    <MenuItem Header="Blue" Tag="#FF0000FF" Click="FillColorMenuItem_Click">
+                                        <MenuItem.Icon>
+                                            <Rectangle Width="14" Height="14" Fill="Blue"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+
+                                    <MenuItem Header="Yellow" Tag="#FFFFFF00" Click="FillColorMenuItem_Click">
+                                        <MenuItem.Icon>
+                                            <Rectangle Width="14" Height="14" Fill="Yellow"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+
+                                    <MenuItem Header="Orange" Tag="#FFFFA500" Click="FillColorMenuItem_Click">
+                                        <MenuItem.Icon>
+                                            <Rectangle Width="14" Height="14" Fill="Orange"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+
+                                    <MenuItem Header="Purple" Tag="#FF800080" Click="FillColorMenuItem_Click">
+                                        <MenuItem.Icon>
+                                            <Rectangle Width="14" Height="14" Fill="Purple"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+
+                                    <MenuItem Header="Cyan" Tag="#FF00FFFF" Click="FillColorMenuItem_Click">
+                                        <MenuItem.Icon>
+                                            <Rectangle Width="14" Height="14" Fill="Cyan"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+
+                                    <MenuItem Header="Magenta" Tag="#FFFF00FF" Click="FillColorMenuItem_Click">
+                                        <MenuItem.Icon>
+                                            <Rectangle Width="14" Height="14" Fill="Magenta"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+
+                                    <MenuItem Header="Gray" Tag="#FF808080" Click="FillColorMenuItem_Click">
+                                        <MenuItem.Icon>
+                                            <Rectangle Width="14" Height="14" Fill="Gray"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+
+                                    <MenuItem Header="Brown" Tag="#FFA52A2A" Click="FillColorMenuItem_Click">
+                                        <MenuItem.Icon>
+                                            <Rectangle Width="14" Height="14" Fill="Brown"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+
+                                    <MenuItem Header="Pink" Tag="#FFFFC0CB" Click="FillColorMenuItem_Click">
+                                        <MenuItem.Icon>
+                                            <Rectangle Width="14" Height="14" Fill="Pink"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+
+                                    <MenuItem Header="LightBlue" Tag="#FFADD8E6" Click="FillColorMenuItem_Click">
+                                        <MenuItem.Icon>
+                                            <Rectangle Width="14" Height="14" Fill="LightBlue"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+
+                                    <MenuItem Header="Transparent" Tag="#00FFFFFF" Click="FillColorMenuItem_Click">
+                                        <MenuItem.Icon>
+                                            <Rectangle Width="14" Height="14" Fill="Transparent" Stroke="Gray"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+
+                                </ContextMenu>
+                            </Button.ContextMenu>
+                        </Button>
                     </StackPanel>
 
                     <!-- Stroke -->
                     <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
                         <TextBlock Text="Stroke:"
-                                   Width="70"
-                                   Foreground="White"
-                                   VerticalAlignment="Center"/>
+               Width="70"
+               Foreground="White"
+               VerticalAlignment="Center"/>
+
+                        <!-- خانة الهيكس بعرض ثابت -->
                         <TextBox x:Name="StrokeColorBox"
-                                 Margin="4,0"
-                                 Text="#FF000000"
-                                 PreviewKeyDown="PropBox_PreviewKeyDown"
-                                 GotFocus="PropBox_GotFocus"
-                                 LostFocus="PropBox_LostFocus"/>
+             Width="120"
+             Margin="4,0"
+             Text="#FF000000"
+             PreviewKeyDown="PropBox_PreviewKeyDown"
+             GotFocus="PropBox_GotFocus"
+             LostFocus="PropBox_LostFocus"/>
+
+                        <!-- زر منيو الألوان للـ Stroke -->
+                        <Button Width="24"
+            Height="22"
+            Margin="4,0,0,0"
+            Content="▼"
+            Click="StrokeColorMenuButton_Click">
+                            <Button.ContextMenu>
+                                <ContextMenu>
+
+                                    <!-- نفس الـ 15 لون -->
+                                    <MenuItem Header="Black" Tag="#FF000000" Click="StrokeColorMenuItem_Click">
+                                        <MenuItem.Icon>
+                                            <Rectangle Width="14" Height="14" Fill="Black"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+
+                                    <MenuItem Header="White" Tag="#FFFFFFFF" Click="StrokeColorMenuItem_Click">
+                                        <MenuItem.Icon>
+                                            <Rectangle Width="14" Height="14" Fill="White"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+
+                                    <MenuItem Header="Red" Tag="#FFFF0000" Click="StrokeColorMenuItem_Click">
+                                        <MenuItem.Icon>
+                                            <Rectangle Width="14" Height="14" Fill="Red"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+
+                                    <MenuItem Header="Green" Tag="#FF008000" Click="StrokeColorMenuItem_Click">
+                                        <MenuItem.Icon>
+                                            <Rectangle Width="14" Height="14" Fill="Green"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+
+                                    <MenuItem Header="Blue" Tag="#FF0000FF" Click="StrokeColorMenuItem_Click">
+                                        <MenuItem.Icon>
+                                            <Rectangle Width="14" Height="14" Fill="Blue"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+
+                                    <MenuItem Header="Yellow" Tag="#FFFFFF00" Click="StrokeColorMenuItem_Click">
+                                        <MenuItem.Icon>
+                                            <Rectangle Width="14" Height="14" Fill="Yellow"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+
+                                    <MenuItem Header="Orange" Tag="#FFFFA500" Click="StrokeColorMenuItem_Click">
+                                        <MenuItem.Icon>
+                                            <Rectangle Width="14" Height="14" Fill="Orange"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+
+                                    <MenuItem Header="Purple" Tag="#FF800080" Click="StrokeColorMenuItem_Click">
+                                        <MenuItem.Icon>
+                                            <Rectangle Width="14" Height="14" Fill="Purple"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+
+                                    <MenuItem Header="Cyan" Tag="#FF00FFFF" Click="StrokeColorMenuItem_Click">
+                                        <MenuItem.Icon>
+                                            <Rectangle Width="14" Height="14" Fill="Cyan"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+
+                                    <MenuItem Header="Magenta" Tag="#FFFF00FF" Click="StrokeColorMenuItem_Click">
+                                        <MenuItem.Icon>
+                                            <Rectangle Width="14" Height="14" Fill="Magenta"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+
+                                    <MenuItem Header="Gray" Tag="#FF808080" Click="StrokeColorMenuItem_Click">
+                                        <MenuItem.Icon>
+                                            <Rectangle Width="14" Height="14" Fill="Gray"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+
+                                    <MenuItem Header="Brown" Tag="#FFA52A2A" Click="StrokeColorMenuItem_Click">
+                                        <MenuItem.Icon>
+                                            <Rectangle Width="14" Height="14" Fill="Brown"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+
+                                    <MenuItem Header="Pink" Tag="#FFFFC0CB" Click="StrokeColorMenuItem_Click">
+                                        <MenuItem.Icon>
+                                            <Rectangle Width="14" Height="14" Fill="Pink"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+
+                                    <MenuItem Header="LightBlue" Tag="#FFADD8E6" Click="StrokeColorMenuItem_Click">
+                                        <MenuItem.Icon>
+                                            <Rectangle Width="14" Height="14" Fill="LightBlue"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+
+                                    <MenuItem Header="Transparent" Tag="#00FFFFFF" Click="StrokeColorMenuItem_Click">
+                                        <MenuItem.Icon>
+                                            <Rectangle Width="14" Height="14" Fill="Transparent" Stroke="Gray"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+
+                                </ContextMenu>
+                            </Button.ContextMenu>
+                        </Button>
                     </StackPanel>
 
-                    <Separator Margin="0,4,0,8"/>
 
                     <!-- التحكم -->
                     <TextBlock Text="Control"

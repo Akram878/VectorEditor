@@ -11,36 +11,8 @@
       "RelativeMoniker": "D:0:0:{039B9215-A887-41FE-A441-C41EE598221B}|VectorEditor.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{039B9215-A887-41FE-A441-C41EE598221B}|VectorEditor.csproj|d:\\programming\\vectoreditor\\models\\rectangleshape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{039B9215-A887-41FE-A441-C41EE598221B}|VectorEditor.csproj|solutionrelative:models\\rectangleshape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{039B9215-A887-41FE-A441-C41EE598221B}|VectorEditor.csproj|d:\\programming\\vectoreditor\\models\\lineshape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{039B9215-A887-41FE-A441-C41EE598221B}|VectorEditor.csproj|solutionrelative:models\\lineshape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{039B9215-A887-41FE-A441-C41EE598221B}|VectorEditor.csproj|d:\\programming\\vectoreditor\\models\\shapebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{039B9215-A887-41FE-A441-C41EE598221B}|VectorEditor.csproj|solutionrelative:models\\shapebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{039B9215-A887-41FE-A441-C41EE598221B}|VectorEditor.csproj|d:\\programming\\vectoreditor\\models\\ishape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{039B9215-A887-41FE-A441-C41EE598221B}|VectorEditor.csproj|solutionrelative:models\\ishape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{039B9215-A887-41FE-A441-C41EE598221B}|VectorEditor.csproj|d:\\programming\\vectoreditor\\models\\ellipseshape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{039B9215-A887-41FE-A441-C41EE598221B}|VectorEditor.csproj|solutionrelative:models\\ellipseshape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{039B9215-A887-41FE-A441-C41EE598221B}|VectorEditor.csproj|d:\\programming\\vectoreditor\\models\\polygonshape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{039B9215-A887-41FE-A441-C41EE598221B}|VectorEditor.csproj|solutionrelative:models\\polygonshape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{039B9215-A887-41FE-A441-C41EE598221B}|VectorEditor.csproj|d:\\programming\\vectoreditor\\services\\undoservice.cs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{039B9215-A887-41FE-A441-C41EE598221B}|VectorEditor.csproj|solutionrelative:services\\undoservice.cs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{039B9215-A887-41FE-A441-C41EE598221B}|VectorEditor.csproj|d:\\programming\\vectoreditor\\services\\svgservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{039B9215-A887-41FE-A441-C41EE598221B}|VectorEditor.csproj|solutionrelative:services\\svgservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{039B9215-A887-41FE-A441-C41EE598221B}|VectorEditor.csproj|d:\\programming\\vectoreditor\\services\\serializationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -51,12 +23,36 @@
       "RelativeMoniker": "D:0:0:{039B9215-A887-41FE-A441-C41EE598221B}|VectorEditor.csproj|solutionrelative:services\\shapefactory.cs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{039B9215-A887-41FE-A441-C41EE598221B}|VectorEditor.csproj|d:\\programming\\vectoreditor\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{039B9215-A887-41FE-A441-C41EE598221B}|VectorEditor.csproj|solutionrelative:app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{039B9215-A887-41FE-A441-C41EE598221B}|VectorEditor.csproj|d:\\programming\\vectoreditor\\services\\svgservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{039B9215-A887-41FE-A441-C41EE598221B}|VectorEditor.csproj|solutionrelative:services\\svgservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{039B9215-A887-41FE-A441-C41EE598221B}|VectorEditor.csproj|d:\\programming\\vectoreditor\\models\\ishape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{039B9215-A887-41FE-A441-C41EE598221B}|VectorEditor.csproj|solutionrelative:models\\ishape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{039B9215-A887-41FE-A441-C41EE598221B}|VectorEditor.csproj|d:\\programming\\vectoreditor\\models\\shapebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{039B9215-A887-41FE-A441-C41EE598221B}|VectorEditor.csproj|solutionrelative:models\\shapebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{039B9215-A887-41FE-A441-C41EE598221B}|VectorEditor.csproj|d:\\programming\\vectoreditor\\models\\ellipseshape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{039B9215-A887-41FE-A441-C41EE598221B}|VectorEditor.csproj|solutionrelative:models\\ellipseshape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{039B9215-A887-41FE-A441-C41EE598221B}|VectorEditor.csproj|d:\\programming\\vectoreditor\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{039B9215-A887-41FE-A441-C41EE598221B}|VectorEditor.csproj|solutionrelative:assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{039B9215-A887-41FE-A441-C41EE598221B}|VectorEditor.csproj|d:\\programming\\vectoreditor\\models\\rectangleshape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{039B9215-A887-41FE-A441-C41EE598221B}|VectorEditor.csproj|solutionrelative:models\\rectangleshape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{039B9215-A887-41FE-A441-C41EE598221B}|VectorEditor.csproj|d:\\programming\\vectoreditor\\models\\lineshape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{039B9215-A887-41FE-A441-C41EE598221B}|VectorEditor.csproj|solutionrelative:models\\lineshape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{039B9215-A887-41FE-A441-C41EE598221B}|VectorEditor.csproj|d:\\programming\\vectoreditor\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{039B9215-A887-41FE-A441-C41EE598221B}|VectorEditor.csproj|solutionrelative:app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{039B9215-A887-41FE-A441-C41EE598221B}|VectorEditor.csproj|d:\\programming\\vectoreditor\\vectoreditor.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -70,11 +66,61 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\programming\\VectorEditor\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
+              "ToolTip": "D:\\programming\\VectorEditor\\MainWindow.xaml.cs",
+              "RelativeToolTip": "MainWindow.xaml.cs",
+              "ViewState": "AgIAAMMCAAAAkDMzMzMDwA4CAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T10:35:35.863Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IShape.cs",
+              "DocumentMoniker": "D:\\programming\\VectorEditor\\Models\\IShape.cs",
+              "RelativeDocumentMoniker": "Models\\IShape.cs",
+              "ToolTip": "D:\\programming\\VectorEditor\\Models\\IShape.cs",
+              "RelativeToolTip": "Models\\IShape.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAowBcAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T10:41:06.576Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ShapeBase.cs",
+              "DocumentMoniker": "D:\\programming\\VectorEditor\\Models\\ShapeBase.cs",
+              "RelativeDocumentMoniker": "Models\\ShapeBase.cs",
+              "ToolTip": "D:\\programming\\VectorEditor\\Models\\ShapeBase.cs",
+              "RelativeToolTip": "Models\\ShapeBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T10:44:12.801Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ShapeFactory.cs.cs",
+              "DocumentMoniker": "D:\\programming\\VectorEditor\\Services\\ShapeFactory.cs.cs",
+              "RelativeDocumentMoniker": "Services\\ShapeFactory.cs.cs",
+              "ToolTip": "D:\\programming\\VectorEditor\\Services\\ShapeFactory.cs.cs",
+              "RelativeToolTip": "Services\\ShapeFactory.cs.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACAAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T11:04:34.87Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -90,136 +136,89 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "RectangleShape.cs",
-              "DocumentMoniker": "D:\\programming\\VectorEditor\\Models\\RectangleShape.cs",
-              "RelativeDocumentMoniker": "Models\\RectangleShape.cs",
-              "ToolTip": "D:\\programming\\VectorEditor\\Models\\RectangleShape.cs",
-              "RelativeToolTip": "Models\\RectangleShape.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAqwCUAAABMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T10:45:48.767Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "LineShape.cs",
-              "DocumentMoniker": "D:\\programming\\VectorEditor\\Models\\LineShape.cs",
-              "RelativeDocumentMoniker": "Models\\LineShape.cs",
-              "ToolTip": "D:\\programming\\VectorEditor\\Models\\LineShape.cs",
-              "RelativeToolTip": "Models\\LineShape.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAUwBUAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T10:57:58.294Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ShapeBase.cs",
-              "DocumentMoniker": "D:\\programming\\VectorEditor\\Models\\ShapeBase.cs",
-              "RelativeDocumentMoniker": "Models\\ShapeBase.cs",
-              "ToolTip": "D:\\programming\\VectorEditor\\Models\\ShapeBase.cs",
-              "RelativeToolTip": "Models\\ShapeBase.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T10:44:12.801Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "D:\\programming\\VectorEditor\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
-              "ToolTip": "D:\\programming\\VectorEditor\\MainWindow.xaml.cs*",
-              "RelativeToolTip": "MainWindow.xaml.cs*",
-              "ViewState": "AgIAAHQEAAAAAAAAAAAgwIkEAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T10:35:35.863Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "IShape.cs",
-              "DocumentMoniker": "D:\\programming\\VectorEditor\\Models\\IShape.cs",
-              "RelativeDocumentMoniker": "Models\\IShape.cs",
-              "ToolTip": "D:\\programming\\VectorEditor\\Models\\IShape.cs",
-              "RelativeToolTip": "Models\\IShape.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAiwBQAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T10:41:06.576Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "EllipseShape.cs",
-              "DocumentMoniker": "D:\\programming\\VectorEditor\\Models\\EllipseShape.cs",
-              "RelativeDocumentMoniker": "Models\\EllipseShape.cs",
-              "ToolTip": "D:\\programming\\VectorEditor\\Models\\EllipseShape.cs",
-              "RelativeToolTip": "Models\\EllipseShape.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAqwCwAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T10:51:42.329Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "PolygonShape.cs",
-              "DocumentMoniker": "D:\\programming\\VectorEditor\\Models\\PolygonShape.cs",
-              "RelativeDocumentMoniker": "Models\\PolygonShape.cs",
-              "ToolTip": "D:\\programming\\VectorEditor\\Models\\PolygonShape.cs",
-              "RelativeToolTip": "Models\\PolygonShape.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T11:54:10.616Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "UndoService.cs.cs",
-              "DocumentMoniker": "D:\\programming\\VectorEditor\\Services\\UndoService.cs.cs",
-              "RelativeDocumentMoniker": "Services\\UndoService.cs.cs",
-              "ToolTip": "D:\\programming\\VectorEditor\\Services\\UndoService.cs.cs",
-              "RelativeToolTip": "Services\\UndoService.cs.cs",
-              "ViewState": "AgIAAE8AAAAAAAAAAAAUwGUAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T11:06:33.781Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "SvgService.cs",
-              "DocumentMoniker": "D:\\programming\\VectorEditor\\Services\\SvgService.cs",
-              "RelativeDocumentMoniker": "Services\\SvgService.cs",
-              "ToolTip": "D:\\programming\\VectorEditor\\Services\\SvgService.cs",
-              "RelativeToolTip": "Services\\SvgService.cs",
-              "ViewState": "AgIAAHgAAAAAAAAAAAAUwJMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T13:50:48.976Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
               "Title": "SerializationService.cs",
               "DocumentMoniker": "D:\\programming\\VectorEditor\\Services\\SerializationService.cs",
               "RelativeDocumentMoniker": "Services\\SerializationService.cs",
               "ToolTip": "D:\\programming\\VectorEditor\\Services\\SerializationService.cs",
               "RelativeToolTip": "Services\\SerializationService.cs",
-              "ViewState": "AgIAAIYAAAAAAAAAAAAwwPwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABMBAAAAAAAAAAAAwBgBAABSAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T11:07:21.707Z"
+              "WhenOpened": "2025-11-12T11:07:21.707Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UndoService.cs.cs",
+              "DocumentMoniker": "D:\\programming\\VectorEditor\\Services\\UndoService.cs.cs",
+              "RelativeDocumentMoniker": "Services\\UndoService.cs.cs",
+              "ToolTip": "D:\\programming\\VectorEditor\\Services\\UndoService.cs.cs",
+              "RelativeToolTip": "Services\\UndoService.cs.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGIAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T11:06:33.781Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "EllipseShape.cs",
+              "DocumentMoniker": "D:\\programming\\VectorEditor\\Models\\EllipseShape.cs",
+              "RelativeDocumentMoniker": "Models\\EllipseShape.cs",
+              "ToolTip": "D:\\programming\\VectorEditor\\Models\\EllipseShape.cs",
+              "RelativeToolTip": "Models\\EllipseShape.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAA5wAsAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T10:51:42.329Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SvgService.cs",
+              "DocumentMoniker": "D:\\programming\\VectorEditor\\Services\\SvgService.cs",
+              "RelativeDocumentMoniker": "Services\\SvgService.cs",
+              "ToolTip": "D:\\programming\\VectorEditor\\Services\\SvgService.cs",
+              "RelativeToolTip": "Services\\SvgService.cs",
+              "ViewState": "AgIAAIcAAAAAAAAAAAAowDwAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T13:50:48.976Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AssemblyInfo.cs",
+              "DocumentMoniker": "D:\\programming\\VectorEditor\\AssemblyInfo.cs",
+              "RelativeDocumentMoniker": "AssemblyInfo.cs",
+              "ToolTip": "D:\\programming\\VectorEditor\\AssemblyInfo.cs",
+              "RelativeToolTip": "AssemblyInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T11:22:06.311Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "RectangleShape.cs",
+              "DocumentMoniker": "D:\\programming\\VectorEditor\\Models\\RectangleShape.cs",
+              "RelativeDocumentMoniker": "Models\\RectangleShape.cs",
+              "ToolTip": "D:\\programming\\VectorEditor\\Models\\RectangleShape.cs",
+              "RelativeToolTip": "Models\\RectangleShape.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAQwCUAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T10:45:48.767Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "ShapeFactory.cs.cs",
-              "DocumentMoniker": "D:\\programming\\VectorEditor\\Services\\ShapeFactory.cs.cs",
-              "RelativeDocumentMoniker": "Services\\ShapeFactory.cs.cs",
-              "ToolTip": "D:\\programming\\VectorEditor\\Services\\ShapeFactory.cs.cs",
-              "RelativeToolTip": "Services\\ShapeFactory.cs.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
+              "Title": "LineShape.cs",
+              "DocumentMoniker": "D:\\programming\\VectorEditor\\Models\\LineShape.cs",
+              "RelativeDocumentMoniker": "Models\\LineShape.cs",
+              "ToolTip": "D:\\programming\\VectorEditor\\Models\\LineShape.cs",
+              "RelativeToolTip": "Models\\LineShape.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAAABUAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T11:04:34.87Z"
+              "WhenOpened": "2025-11-12T10:57:58.294Z"
             },
             {
               "$type": "Document",
@@ -236,18 +235,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "AssemblyInfo.cs",
-              "DocumentMoniker": "D:\\programming\\VectorEditor\\AssemblyInfo.cs",
-              "RelativeDocumentMoniker": "AssemblyInfo.cs",
-              "ToolTip": "D:\\programming\\VectorEditor\\AssemblyInfo.cs",
-              "RelativeToolTip": "AssemblyInfo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T11:22:06.311Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
               "Title": "VectorEditor.csproj",
               "DocumentMoniker": "D:\\programming\\VectorEditor\\VectorEditor.csproj",
               "RelativeDocumentMoniker": "VectorEditor.csproj",
